@@ -31,8 +31,8 @@ public class Server {
         ServerSocket server = new ServerSocket(port);
         serverLog.add("Server started at " + new Date());
         serverLog.add("Server Name: " + serverName);
-        serverLog.add("Server IP: " + InetAddress.getLocalHost().getHostAddress());
-        serverLog.add("Server Port: " + port);
+        serverLog.add("IP: " + InetAddress.getLocalHost().getHostAddress());
+        serverLog.add("Port: " + port);
         serverLog.add("Waiting for client...");
         //Listen for client
         try {
