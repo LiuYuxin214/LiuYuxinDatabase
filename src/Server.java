@@ -1,8 +1,11 @@
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Server {
     public static int numOfUsers = 0;
@@ -12,10 +15,24 @@ public class Server {
         ServerLog serverLog = new ServerLog();
         serverLog.add("Liu Yuxin Database Server Version 1.0");
         serverLog.add("Server booting up...");
-        ServerSocket server = new ServerSocket(Integer.parseInt(args[0]));
+        File configfile = new File("config.txt");
+        if (!configfile.exists()) {
+            configfile.createNewFile();
+            PrintWriter writer = new PrintWriter(configfile);
+            writer.println("20000");
+            writer.println("MyDatabase");
+            writer.println("\033[32mOK\033[0m");
+            writer.close();
+        }
+        Scanner configSc = new Scanner(configfile);
+        int port = configSc.nextInt();
+        String serverName = configSc.next();
+        String serverStatus = configSc.next();
+        ServerSocket server = new ServerSocket(port);
         serverLog.add("Server started at " + new Date());
-        serverLog.add("Server IP is " + InetAddress.getLocalHost().getHostAddress());
-        serverLog.add("Server is listening on port " + args[0]);
+        serverLog.add("Server Name: " + serverName);
+        serverLog.add("Server IP: " + InetAddress.getLocalHost().getHostAddress());
+        serverLog.add("Server Port: " + port);
         serverLog.add("Waiting for client...");
         //Listen for client
         try {
@@ -25,7 +42,7 @@ public class Server {
                     serverLog.add("A new Client Connected");
                     numOfUsers++;
                     serverLog.add("The number of clients is " + numOfUsers);
-                    new Thread(new ProcessOneClient(socket, serverLog)).start();
+                    new Thread(new ProcessOneClient(socket, serverLog, serverName, serverStatus)).start();
                 } catch (IOException e) {
                     socket.close();
                     serverLog.add("Server error occurred, a user's process stopped running");

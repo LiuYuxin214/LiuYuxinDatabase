@@ -37,8 +37,8 @@ public class Client {
         }
         while (true) {
             System.out.println("\033[31m+==================\033[1mNot connected\033[0m\033[31m==================+\033[0m");
-            System.out.println("\033[31m|\033[0m             \033[1mWelcome to Liu Yuxin Database!\033[0m             \033[31m|\033[0m");
-            System.out.println("\033[31m|\033[0m           Liu Yuxin Database Client Version 1.0        \033[31m|\033[0m");
+            System.out.println(" Client Version: 1.0");
+            System.out.println(" IP: " + ip + "\n Port: " + port + "\n Client ID: " + clientID);
             System.out.println("\033[31m+=================================================+\033[0m");
             System.out.println("\033[5mPress enter to connect\033[0m");
             System.out.println("Type \033[31me\033[0m then press enter to exit.");
@@ -123,19 +123,17 @@ public class Client {
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());
                 out.writeInt(clientID);
-                String dateTime = in.readUTF();
-                String announcement = in.readUTF();
                 System.out.println("\033[32mConnect to server successfully!\033[0m");
-                sleep(1000);
-                Scanner scanner = new Scanner(System.in);
+                Scanner loginSc = new Scanner(System.in);
                 System.out.println("\033[33m+==================\033[1mNot logged in\033[0m\033[33m==================+\033[0m");
-                System.out.println("\033[33m|\033[0m             \033[1mWelcome to Liu Yuxin Database!\033[0m             \033[33m|\033[0m");
-                System.out.printf("\033[33m|\033[0m\033[1mAnnouncement: \033[35m%-35s\033[0m\033[33m|\033[0m\n", announcement);
-                System.out.println("\033[33m|\033[0m\033[1mServer Time&Date: \033[36m" + dateTime + "\033[0m" + "   \033[33m|\033[0m");
+                System.out.println(" Server Name: " + in.readUTF());
+                System.out.println(" Server Version: " + in.readUTF());
+                System.out.println(" IP: " + ip + "\n Port: " + port + "\n Client ID: " + clientID);
+                System.out.println(" Server State: " + in.readUTF());
                 System.out.println("\033[33m+=================================================+\033[0m");
-                System.out.println("If you want to disconnect from server, type \033[31md\033[0m.");
+                System.out.println("Type \033[31md\033[0m to disconnect from server.");
                 System.out.print("\033[1mLogin as: \033[0m");
-                String enter = scanner.next();
+                String enter = loginSc.next();
                 String password;
                 if (enter.equals("d")) {
                     System.out.print("\033[31mDisconnecting\033[0m");
@@ -144,7 +142,7 @@ public class Client {
                         System.out.print("\033[31m.\033[0m");
                     }
                     System.out.println();
-                    out.writeInt(-1);
+                    out.writeUTF("disconnect");
                     in.close();
                     out.close();
                     socket.close();
@@ -152,60 +150,64 @@ public class Client {
                     sleep(1000);
                     continue;
                 }
-                String id = enter;
+                String userName = enter;
                 System.out.print("\033[1mPassword: \033[0m");
-                Console console = System.console();
-                if (!(console == null)) {
-                    char[] passwordArray = console.readPassword();
-                    password = new String(passwordArray);
-                } else {
-                    password = scanner.next();
-                }
-                System.out.println("\033[36mSending ID and password to server...\033[0m");
-                out.writeUTF(id);
+                password = loginSc.next();
+                out.writeUTF(userName);
                 out.writeUTF(password);
-                sleep(500);
                 String result = in.readUTF();
                 switch (result) {
                     case "Password Correct" -> {
                         System.out.println("\033[32mPassword Correct\033[0m");
-                        System.out.println("\033[1mLoading...\033[0m");
-                        System.out.print("\033[1m(|\033[0m");
-                        for (int i = 0; i < 47; i++) {
-                            sleep(30);
-                            System.out.print("\033[32m*\033[0m");
-                        }
-                        System.out.println("\033[1m|)\033[0m");
-                        dateTime = in.readUTF();
+                        String dateTime = in.readUTF();
                         System.out.println("\033[32m+====================\033[1mLogged in\033[0m\033[32m====================+\033[0m");
-                        System.out.println("\033[32m|\033[0m             \033[1mWelcome to Liu Yuxin Database!\033[0m             \033[32m|\033[0m");
-                        System.out.println("\033[32m|\033[0m\033[1mUser ID: \033[33m" + id + "\033[0m" + "                                       \033[32m|\033[0m");
-                        System.out.printf("\033[32m|\033[0m\033[1mAnnouncement: \033[35m%-35s\033[0m\033[32m|\033[0m\n", announcement);
-                        System.out.println("\033[32m|\033[0m\033[1mLogin Date&Time: \033[36m" + dateTime + "\033[0m" + "    \033[32m|\033[0m");
+                        System.out.println(" \033[1mUser Name: \033[33m" + userName + "\033[0m");
+                        System.out.println(" \033[1mLogin Date&Time: \033[36m" + dateTime + "\033[0m");
                         System.out.println("\033[32m+=================================================+\033[0m");
+                        System.out.println("To log out, type \033[31mquit\033[0m.");
+                        System.out.println("To get help, type \033[34m?\033[0m.");
                         while (true) {
-                            System.out.print(id + ">");
-                            Scanner input = new Scanner(System.in);
-                            double amount;
-                            String option = input.next();
-                            switch (option) {
+                            System.out.print(userName + "> ");
+                            Scanner command = new Scanner(System.in);
+                            String instruction = command.next();
+                            switch (instruction) {
                                 case "test" -> {
-                                    out.writeInt(1);
-                                    double balance = in.readDouble();
-                                    System.out.println("\033[1mThe balance is \033[32m$" + balance + "\033[0m");
-                                    waiter();
+                                    out.writeUTF("test");
+                                    int n = command.nextInt();
+                                    out.writeInt(n);
+                                    int result1 = in.readInt();
+                                    System.out.println("Result: " + result1);
+                                }
+                                case "date" -> {
+                                    out.writeUTF("date");
+                                    String date = in.readUTF();
+                                    System.out.println(date);
+                                }
+                                case "?" -> {
+                                    out.writeUTF("?");
+                                    while (true) {
+                                        String help = in.readUTF();
+                                        if (help.equals("end")) {
+                                            break;
+                                        }
+                                        System.out.println(help);
+                                    }
+                                }
+                                case "version" -> {
+                                    out.writeUTF("version");
+                                    String version = in.readUTF();
+                                    System.out.println(version);
                                 }
                                 case "quit" -> {
-                                    out.writeInt(8);
-                                    System.out.println("\033[1mThank you for using ATM Machine!\033[0m");
-                                    sleep(2000);
+                                    out.writeUTF("quit");
+                                    System.out.println("\033[1mThank you for using Liu Yuxin Database!\033[0m");
+                                    sleep(1000);
                                 }
                                 default -> {
-                                    System.out.println("\033[31mInvalid choice\033[0m");
-                                    sleep(2000);
+                                    System.out.println("\033[31mInvalid instruction!\033[0m Please Check \"" + instruction + "\" Again!");
                                 }
                             }
-                            if (option.equals("quit")) break;
+                            if (instruction.equals("quit")) break;
                         }
                     }
                     case "Wrong Password" -> {
@@ -214,10 +216,6 @@ public class Client {
                     }
                     case "User not found" -> {
                         System.out.println("\033[31mUser not found\033[0m");
-                        sleep(2000);
-                    }
-                    case "User is frozen" -> {
-                        System.out.println("\033[31mUser is frozen, please contact the staff\033[0m");
                         sleep(2000);
                     }
                 }

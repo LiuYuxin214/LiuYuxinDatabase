@@ -1,0 +1,14 @@
+[Thu Dec 01 17:33:49 CST 2022] Liu Yuxin Database Server Version 1.0
+[Thu Dec 01 17:33:49 CST 2022] Server booting up...
+[Thu Dec 01 17:33:49 CST 2022] Server started at Thu Dec 01 17:33:49 CST 2022
+[Thu Dec 01 17:33:49 CST 2022] Server Name: MyDatabase
+[Thu Dec 01 17:33:49 CST 2022] Server IP: 10.33.142.133
+[Thu Dec 01 17:33:49 CST 2022] Server Port: 20000
+[Thu Dec 01 17:33:49 CST 2022] Waiting for client...
+[Thu Dec 01 17:33:59 CST 2022] A new Client Connected
+[Thu Dec 01 17:33:59 CST 2022] The number of clients is 1
+[Thu Dec 01 17:34:15 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 17:34:15 CST 2022] Client 0 User user: Password: 123
+[Thu Dec 01 17:34:15 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 17:34:15 CST 2022] Client 0 User user: User not found
+[Thu Dec 01 17:34:15 CST 2022] Client 0 User user: The client is disconnected normally

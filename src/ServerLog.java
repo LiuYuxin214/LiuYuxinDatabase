@@ -26,8 +26,8 @@ public class ServerLog {
         out.println(line);
     }
 
-    public void addClientUser(int clientID, int id, String message) {
-        String line = "[" + new Date() + "] " + "Client " + clientID + " User " + id + ": " + message;
+    public void addClientUser(int clientID, String userName, String message) {
+        String line = "[" + new Date() + "] " + "Client " + clientID + " User " + userName + ": " + message;
         System.out.println(line);
         out.println(line);
     }

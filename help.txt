@@ -1,0 +1,3 @@
+?: Get Help
+version: Get Version
+quit: Log out and return to the welcome screen
