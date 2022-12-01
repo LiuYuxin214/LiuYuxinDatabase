@@ -133,9 +133,8 @@ public class Client {
                 System.out.println("\033[33m+=================================================+\033[0m");
                 System.out.println("Type \033[31md\033[0m to disconnect from server.");
                 System.out.print("\033[1mLogin as: \033[0m");
-                String enter = loginSc.next();
-                String password;
-                if (enter.equals("d")) {
+                String userName = loginSc.next();
+                if (userName.equals("d")) {
                     System.out.print("\033[31mDisconnecting\033[0m");
                     for (int i = 0; i < 3; i++) {
                         sleep(500);
@@ -150,9 +149,8 @@ public class Client {
                     sleep(1000);
                     continue;
                 }
-                String userName = enter;
                 System.out.print("\033[1mPassword: \033[0m");
-                password = loginSc.next();
+                String password = loginSc.next();
                 out.writeUTF(userName);
                 out.writeUTF(password);
                 String result = in.readUTF();
@@ -203,9 +201,8 @@ public class Client {
                                     System.out.println("\033[1mThank you for using Liu Yuxin Database!\033[0m");
                                     sleep(1000);
                                 }
-                                default -> {
-                                    System.out.println("\033[31mInvalid instruction!\033[0m Please Check \"" + instruction + "\" Again!");
-                                }
+                                default ->
+                                        System.out.println("\033[31mInvalid instruction!\033[0m Please Check \"" + instruction + "\" Again!");
                             }
                             if (instruction.equals("quit")) break;
                         }
