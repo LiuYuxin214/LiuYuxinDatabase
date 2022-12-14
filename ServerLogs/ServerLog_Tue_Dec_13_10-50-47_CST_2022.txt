@@ -1,0 +1,32 @@
+[Tue Dec 13 10:50:47 CST 2022] Liu Yuxin Database Server Version 1.0
+[Tue Dec 13 10:50:47 CST 2022] Server booting up...
+[Tue Dec 13 10:50:47 CST 2022] Server started at Tue Dec 13 10:50:47 CST 2022
+[Tue Dec 13 10:50:47 CST 2022] Database Name: MyDatabase
+[Tue Dec 13 10:50:47 CST 2022] Database Version: 1.0
+[Tue Dec 13 10:50:47 CST 2022] IP: 10.33.142.133
+[Tue Dec 13 10:50:47 CST 2022] Port: 20000
+[Tue Dec 13 10:50:47 CST 2022] Waiting for client...
+[Tue Dec 13 10:50:52 CST 2022] A new Client Connected
+[Tue Dec 13 10:50:52 CST 2022] The number of clients is 1
+[Tue Dec 13 10:50:54 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 10:50:54 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 10:50:54 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 10:50:54 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 10:50:54 CST 2022] Client 0 User user: User user Password Correct
+[Tue Dec 13 10:51:05 CST 2022] Client 0 User user: User user updated a row in table named stu
+[Tue Dec 13 10:51:12 CST 2022] Client 0 User user: User user selected all rows from table named stu
+[Tue Dec 13 10:51:12 CST 2022] Client 0 User user: User user selected a row from table named stu
+[Tue Dec 13 10:51:35 CST 2022] Client 0 User user: User user deleted a row from table named stu
+[Tue Dec 13 10:51:50 CST 2022] Client 0 User user: User user selected all rows from table named stu
+[Tue Dec 13 10:51:50 CST 2022] Client 0 User user: User user selected a row from table named stu
+[Tue Dec 13 10:51:58 CST 2022] Client 0 User user: Client logs out
+[Tue Dec 13 10:51:58 CST 2022] Client 0 User user: The client is disconnected normally
+[Tue Dec 13 10:52:02 CST 2022] A new Client Connected
+[Tue Dec 13 10:52:02 CST 2022] The number of clients is 1
+[Tue Dec 13 10:52:05 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 10:52:05 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 10:52:05 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 10:52:05 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 10:52:05 CST 2022] Client 0 User user: User user Password Correct
+[Tue Dec 13 10:52:17 CST 2022] Client 0 User user: User user selected all rows from table named stu
+[Tue Dec 13 10:52:17 CST 2022] Client 0 User user: User user selected a row from table named stu

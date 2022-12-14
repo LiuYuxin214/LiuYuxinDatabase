@@ -1,0 +1,26 @@
+[Tue Dec 13 14:24:40 CST 2022] Liu Yuxin Database Server Version 1.0
+[Tue Dec 13 14:24:40 CST 2022] Server booting up...
+[Tue Dec 13 14:24:40 CST 2022] Server started at Tue Dec 13 14:24:40 CST 2022
+[Tue Dec 13 14:24:40 CST 2022] Database Name: MyDatabase
+[Tue Dec 13 14:24:40 CST 2022] Database Version: 1.0
+[Tue Dec 13 14:24:40 CST 2022] IP: 10.33.142.133
+[Tue Dec 13 14:24:40 CST 2022] Port: 20000
+[Tue Dec 13 14:24:40 CST 2022] Waiting for client...
+[Tue Dec 13 14:25:11 CST 2022] A new Client Connected
+[Tue Dec 13 14:25:11 CST 2022] The number of clients is 1
+[Tue Dec 13 14:25:16 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 14:25:16 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 14:25:16 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 14:25:16 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 14:25:16 CST 2022] Client 0 User user: User user Password Correct
+[Tue Dec 13 14:26:44 CST 2022] Client 0 User user: User user created a table named student
+[Tue Dec 13 14:27:02 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Tue Dec 13 14:27:16 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Tue Dec 13 14:27:16 CST 2022] Client 0 User user: User user selected a row from table named student
+[Tue Dec 13 14:28:27 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Tue Dec 13 14:28:39 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Tue Dec 13 14:28:39 CST 2022] Client 0 User user: User user selected a row from table named student
+[Tue Dec 13 14:28:52 CST 2022] Client 0 User user: User user selected a row from table named student
+[Tue Dec 13 14:28:52 CST 2022] Client 0 User user: User user selected a row from table named student
+[Tue Dec 13 14:29:37 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Tue Dec 13 14:29:37 CST 2022] Client 0 User user: Error: null

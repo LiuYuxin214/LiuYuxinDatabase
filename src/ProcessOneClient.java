@@ -3,6 +3,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -15,12 +16,12 @@ public class ProcessOneClient implements Runnable {
     private int clientID;
     private String userName;
 
-    public ProcessOneClient(Socket socket, ServerLog Log, String serverName, String serverStatus) throws IOException {
+    public ProcessOneClient(Socket socket, ServerLog Log, String databaseName, String databaseStatus) throws IOException {
         try {
             this.socket = socket;
             this.serverLog = Log;
-            this.serverName = serverName;
-            this.serverStatus = serverStatus;
+            this.serverName = databaseName;
+            this.serverStatus = databaseStatus;
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
@@ -56,12 +57,94 @@ public class ProcessOneClient implements Runnable {
                     serverLog.addClientUser(clientID, userName, "User " + userName + " Password Correct");
                     out.writeUTF("Password Correct");
                     out.writeUTF(new Date().toString());
+                    TableInfo tableInfo = new TableInfo();
+                    tableInfo.getFromFile();
                     while (true) {
                         String option = in.readUTF();
                         switch (option) {
-                            case "test" -> {
-                                int num = in.readInt();
-                                out.writeInt(num + 1);
+                            case "createtable" -> {
+                                String name = in.readUTF();
+                                String[] headers = in.readUTF().split(",");
+                                tableInfo.addTable(name, headers.length);
+                                tableInfo.saveToFile();
+                                Table table = new Table(name, headers);
+                                table.saveToFile();
+                                serverLog.addClientUser(clientID, userName, "User " + userName + " created a table named " + name);
+                                out.writeUTF("Table Created");
+                            }
+                            case "deletetable" -> {
+                                String name = in.readUTF();
+                                tableInfo.removeTable(name);
+                                tableInfo.saveToFile();
+                                new File("Tables/" + name + ".txt").delete();
+                                serverLog.addClientUser(clientID, userName, "User " + userName + " deleted a table named " + name);
+                                out.writeUTF("Table Deleted");
+                            }
+                            case "insert" -> {
+                                String name = in.readUTF();
+                                int key = in.readInt();
+                                String[] values = in.readUTF().split(",");
+                                Table table = new Table(name);
+                                table.getFromFile();
+                                table.insert(key, values);
+                                table.saveToFile();
+                                serverLog.addClientUser(clientID, userName, "User " + userName + " inserted a row into table named " + name);
+                                out.writeUTF("Row Inserted");
+                            }
+                            case "delete" -> {
+                                String name = in.readUTF();
+                                String arguments = in.readUTF();
+                                Table table = new Table(name);
+                                table.getFromFile();
+                                if (arguments.equals("*")) {
+                                    table.deleteAll();
+                                    table.saveToFile();
+                                    serverLog.addClientUser(clientID, userName, "User " + userName + " deleted all rows from table named " + name);
+                                    out.writeUTF("All Rows Deleted");
+                                } else {
+                                    int key = Integer.parseInt(arguments);
+                                    table.delete(key);
+                                    table.saveToFile();
+                                    serverLog.addClientUser(clientID, userName, "User " + userName + " deleted a row from table named " + name);
+                                    out.writeUTF("Row Deleted");
+                                }
+
+                            }
+                            case "update" -> {
+                                String name = in.readUTF();
+                                int key = in.readInt();
+                                String[] values = in.readUTF().split(",");
+                                Table table = new Table(name);
+                                table.getFromFile();
+                                table.update(key, values);
+                                table.saveToFile();
+                                serverLog.addClientUser(clientID, userName, "User " + userName + " updated a row in table named " + name);
+                                out.writeUTF("Row Updated");
+                            }
+                            case "select" -> {
+                                String name = in.readUTF();
+                                String arguments = in.readUTF();
+                                tableInfo.getFromFile();
+                                if (!tableInfo.contains(name)) {
+                                    out.writeUTF("No such table");
+                                    break;
+                                }
+                                Table table = new Table(name);
+                                table.getFromFile();
+                                out.writeUTF(table.getHeaders());
+                                if (arguments.equals("*")) {
+                                    out.writeInt(table.getRows());
+                                    ArrayList<TreeNode> rows = table.selectAll();
+                                    for (TreeNode row : rows) {
+                                        out.writeUTF(row.getKey() + " " + row.getValues().toString());
+                                    }
+                                    serverLog.addClientUser(clientID, userName, "User " + userName + " selected all rows from table named " + name);
+                                } else {
+                                    int key = Integer.parseInt(arguments);
+                                    out.writeUTF(table.select(key).getKey() + " " + table.select(key).getValues().toString());
+                                    serverLog.addClientUser(clientID, userName, "User " + userName + " selected a row from table named " + name);
+                                }
+                                serverLog.addClientUser(clientID, userName, "User " + userName + " selected a row from table named " + name);
                             }
                             case "date" -> out.writeUTF(new Date().toString());
                             case "?" -> {

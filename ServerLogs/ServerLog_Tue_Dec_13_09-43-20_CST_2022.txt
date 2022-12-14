@@ -1,0 +1,34 @@
+[Tue Dec 13 09:43:20 CST 2022] Liu Yuxin Database Server Version 1.0
+[Tue Dec 13 09:43:20 CST 2022] Server booting up...
+[Tue Dec 13 09:43:20 CST 2022] Server started at Tue Dec 13 09:43:20 CST 2022
+[Tue Dec 13 09:43:20 CST 2022] Database Name: MyDatabase
+[Tue Dec 13 09:43:20 CST 2022] Database Version: 1.0
+[Tue Dec 13 09:43:20 CST 2022] IP: 192.168.8.143
+[Tue Dec 13 09:43:20 CST 2022] Port: 20000
+[Tue Dec 13 09:43:20 CST 2022] Waiting for client...
+[Tue Dec 13 09:43:34 CST 2022] A new Client Connected
+[Tue Dec 13 09:43:34 CST 2022] The number of clients is 1
+[Tue Dec 13 09:43:51 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 09:43:51 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 09:43:51 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 09:43:51 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 09:43:51 CST 2022] Client 0 User user: User user Password Correct
+[Tue Dec 13 09:44:30 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Tue Dec 13 09:44:30 CST 2022] Client 0 User user: Error: Tables\stu.txt (系统找不到指定的路径。)
+[Tue Dec 13 09:46:01 CST 2022] A new Client Connected
+[Tue Dec 13 09:46:01 CST 2022] The number of clients is 1
+[Tue Dec 13 09:46:07 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 09:46:07 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 09:46:07 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 09:46:07 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 09:46:07 CST 2022] Client 0 User user: User user Password Correct
+[Tue Dec 13 09:46:36 CST 2022] Client 0 User user: User user created a table named stu1
+[Tue Dec 13 09:47:05 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Tue Dec 13 09:47:05 CST 2022] Client 0 User user: Error: null
+[Tue Dec 13 09:47:45 CST 2022] A new Client Connected
+[Tue Dec 13 09:47:45 CST 2022] The number of clients is 1
+[Tue Dec 13 09:47:53 CST 2022] Client 0 User user: User Name: user
+[Tue Dec 13 09:47:53 CST 2022] Client 0 User user: Password: 123
+[Tue Dec 13 09:47:53 CST 2022] Client 0 User user: Checking User ID and Password...
+[Tue Dec 13 09:47:53 CST 2022] Client 0 User user: User user exists
+[Tue Dec 13 09:47:53 CST 2022] Client 0 User user: User user Password Correct

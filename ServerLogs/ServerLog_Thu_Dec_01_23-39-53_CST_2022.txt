@@ -1,0 +1,7 @@
+[Thu Dec 01 23:39:53 CST 2022] Liu Yuxin Database Server Version 1.0
+[Thu Dec 01 23:39:53 CST 2022] Server booting up...
+[Thu Dec 01 23:39:53 CST 2022] Server started at Thu Dec 01 23:39:53 CST 2022
+[Thu Dec 01 23:39:53 CST 2022] Server Name: MyDatabase
+[Thu Dec 01 23:39:53 CST 2022] IP: 192.168.8.143
+[Thu Dec 01 23:39:53 CST 2022] Port: 20000
+[Thu Dec 01 23:39:53 CST 2022] Waiting for client...

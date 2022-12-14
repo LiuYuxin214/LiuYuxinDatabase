@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.Thread.sleep;
@@ -42,7 +43,7 @@ public class Client {
             System.out.println("\033[31m+=================================================+\033[0m");
             System.out.println("\033[5mPress enter to connect\033[0m");
             System.out.println("Type \033[31me\033[0m then press enter to exit.");
-            System.out.println("Type \033[36ms\033[0m then press enter to setting.");
+            System.out.print("Type \033[36ms\033[0m then press enter to setting.");
             Scanner waiter = new Scanner(System.in);
             String function = waiter.nextLine();
             if (function.equals("e")) {
@@ -126,8 +127,8 @@ public class Client {
                 System.out.println("\033[32mConnect to server successfully!\033[0m");
                 Scanner loginSc = new Scanner(System.in);
                 System.out.println("\033[33m+==================\033[1mNot logged in\033[0m\033[33m==================+\033[0m");
-                System.out.println(" Server Name: " + in.readUTF());
-                System.out.println(" Server Version: " + in.readUTF());
+                System.out.println(" Database Name: " + in.readUTF());
+                System.out.println(" Database Version: " + in.readUTF());
                 System.out.println(" IP: " + ip + "\n Port: " + port + "\n Client ID: " + clientID);
                 System.out.println(" Server State: " + in.readUTF());
                 System.out.println("\033[33m+=================================================+\033[0m");
@@ -164,17 +165,85 @@ public class Client {
                         System.out.println("\033[32m+=================================================+\033[0m");
                         System.out.println("To log out, type \033[31mquit\033[0m.");
                         System.out.println("To get help, type \033[34m?\033[0m.");
+                        ArrayList<String> history = new ArrayList<>();
                         while (true) {
-                            System.out.print(userName + "> ");
+                            System.out.print("LYXDB " + userName + "@" + ip + "> ");
                             Scanner command = new Scanner(System.in);
                             String instruction = command.next();
+                            history.add(instruction);
                             switch (instruction) {
-                                case "test" -> {
-                                    out.writeUTF("test");
-                                    int n = command.nextInt();
-                                    out.writeInt(n);
-                                    int result1 = in.readInt();
-                                    System.out.println("Result: " + result1);
+                                case "createtable" -> {
+                                    out.writeUTF("createtable");
+                                    String name = command.next();
+                                    String header = command.next();
+                                    out.writeUTF(name);
+                                    out.writeUTF(header);
+                                    System.out.println(in.readUTF());
+                                }
+                                case "deletetable" -> {
+                                    out.writeUTF("deletetable");
+                                    String name = command.next();
+                                    out.writeUTF(name);
+                                    System.out.println(in.readUTF());
+                                }
+                                case "insert" -> {
+                                    out.writeUTF("insert");
+                                    String name = command.next();
+                                    int key = command.nextInt();
+                                    String value = command.next();
+                                    out.writeUTF(name);
+                                    out.writeInt(key);
+                                    out.writeUTF(value);
+                                    System.out.println(in.readUTF());
+                                }
+                                case "delete" -> {
+                                    out.writeUTF("delete");
+                                    String name = command.next();
+                                    String key = command.next();
+                                    out.writeUTF(name);
+                                    out.writeUTF(key);
+                                    System.out.println(in.readUTF());
+                                }
+                                case "update" -> {
+                                    out.writeUTF("update");
+                                    String name = command.next();
+                                    int key = command.nextInt();
+                                    String value = command.next();
+                                    out.writeUTF(name);
+                                    out.writeInt(key);
+                                    out.writeUTF(value);
+                                    System.out.println(in.readUTF());
+                                }
+                                case "select" -> {
+                                    out.writeUTF("select");
+                                    String name = command.next();
+                                    String key = command.next();
+                                    out.writeUTF(name);
+                                    out.writeUTF(key);
+                                    String header = in.readUTF();
+                                    System.out.println(header);
+                                    if (header.equals("No such table")) {
+                                        continue;
+                                    }
+                                    System.out.println("----------------------------------------------");
+                                    if (key.equals("*")) {
+                                        int rows = in.readInt();
+                                        for (int i = 0; i < rows; i++) {
+                                            System.out.println(in.readUTF());
+                                        }
+                                    } else {
+                                        System.out.println(in.readUTF());
+                                    }
+                                }
+                                case "history" -> {
+                                    int n = 1;
+                                    System.out.println("--------------------\033[1mHistory\033[0m--------------------");
+                                    for (String s : history) {
+                                        System.out.print(n + " ");
+                                        n++;
+                                        System.out.println(s);
+                                    }
+                                    System.out.println("------------------------------------------------");
                                 }
                                 case "date" -> {
                                     out.writeUTF("date");

@@ -26,11 +26,13 @@ public class Server {
         }
         Scanner configSc = new Scanner(configfile);
         int port = configSc.nextInt();
-        String serverName = configSc.next();
-        String serverStatus = configSc.next();
+        String databaseName = configSc.next();
+        String databaseVersion = "1.0";
+        String databaseStatus = configSc.next();
         ServerSocket server = new ServerSocket(port);
         serverLog.add("Server started at " + new Date());
-        serverLog.add("Server Name: " + serverName);
+        serverLog.add("Database Name: " + databaseName);
+        serverLog.add("Database Version: " + databaseVersion);
         serverLog.add("IP: " + InetAddress.getLocalHost().getHostAddress());
         serverLog.add("Port: " + port);
         serverLog.add("Waiting for client...");
@@ -42,7 +44,7 @@ public class Server {
                     serverLog.add("A new Client Connected");
                     numOfUsers++;
                     serverLog.add("The number of clients is " + numOfUsers);
-                    new Thread(new ProcessOneClient(socket, serverLog, serverName, serverStatus)).start();
+                    new Thread(new ProcessOneClient(socket, serverLog, databaseName, databaseStatus)).start();
                 } catch (IOException e) {
                     socket.close();
                     serverLog.add("Server error occurred, a user's process stopped running");

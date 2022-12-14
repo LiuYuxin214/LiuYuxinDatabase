@@ -1,0 +1,60 @@
+[Thu Dec 01 23:31:28 CST 2022] Liu Yuxin Database Server Version 1.0
+[Thu Dec 01 23:31:28 CST 2022] Server booting up...
+[Thu Dec 01 23:31:28 CST 2022] Server started at Thu Dec 01 23:31:28 CST 2022
+[Thu Dec 01 23:31:28 CST 2022] Server Name: MyDatabase
+[Thu Dec 01 23:31:28 CST 2022] IP: 192.168.8.143
+[Thu Dec 01 23:31:28 CST 2022] Port: 20000
+[Thu Dec 01 23:31:28 CST 2022] Waiting for client...
+[Thu Dec 01 23:31:44 CST 2022] A new Client Connected
+[Thu Dec 01 23:31:44 CST 2022] The number of clients is 1
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: Password: 1234
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: User user exists
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: Wrong Password
+[Thu Dec 01 23:32:03 CST 2022] Client 0 User user: The client is disconnected normally
+[Thu Dec 01 23:32:07 CST 2022] A new Client Connected
+[Thu Dec 01 23:32:07 CST 2022] The number of clients is 1
+[Thu Dec 01 23:32:15 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 23:32:15 CST 2022] Client 0 User user: Password: 123
+[Thu Dec 01 23:32:15 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 23:32:15 CST 2022] Client 0 User user: User user exists
+[Thu Dec 01 23:32:15 CST 2022] Client 0 User user: User user Password Correct
+[Thu Dec 01 23:34:00 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Thu Dec 01 23:34:00 CST 2022] Client 0 User user: Error: Connection reset
+[Thu Dec 01 23:34:08 CST 2022] A new Client Connected
+[Thu Dec 01 23:34:08 CST 2022] The number of clients is 1
+[Thu Dec 01 23:34:14 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 23:34:14 CST 2022] Client 0 User user: Password: 123
+[Thu Dec 01 23:34:14 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 23:34:14 CST 2022] Client 0 User user: User user exists
+[Thu Dec 01 23:34:14 CST 2022] Client 0 User user: User user Password Correct
+[Thu Dec 01 23:35:19 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Thu Dec 01 23:35:19 CST 2022] Client 0 User user: Error: Connection reset
+[Thu Dec 01 23:35:27 CST 2022] A new Client Connected
+[Thu Dec 01 23:35:27 CST 2022] The number of clients is 1
+[Thu Dec 01 23:35:33 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 23:35:33 CST 2022] Client 0 User user: Password: 123
+[Thu Dec 01 23:35:33 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 23:35:33 CST 2022] Client 0 User user: User user exists
+[Thu Dec 01 23:35:33 CST 2022] Client 0 User user: User user Password Correct
+[Thu Dec 01 23:37:25 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Thu Dec 01 23:37:25 CST 2022] Client 0 User user: Error: Connection reset
+[Thu Dec 01 23:37:33 CST 2022] A new Client Connected
+[Thu Dec 01 23:37:33 CST 2022] The number of clients is 1
+[Thu Dec 01 23:37:44 CST 2022] Client 0 User LiuYuxin: User Name: LiuYuxin
+[Thu Dec 01 23:37:44 CST 2022] Client 0 User LiuYuxin: Password: 2002917l
+[Thu Dec 01 23:37:44 CST 2022] Client 0 User LiuYuxin: Checking User ID and Password...
+[Thu Dec 01 23:37:44 CST 2022] Client 0 User LiuYuxin: User LiuYuxin exists
+[Thu Dec 01 23:37:44 CST 2022] Client 0 User LiuYuxin: User LiuYuxin Password Correct
+[Thu Dec 01 23:38:25 CST 2022] Client 0 User LiuYuxin: The client was disconnected unexpectedly
+[Thu Dec 01 23:38:25 CST 2022] Client 0 User LiuYuxin: Error: Connection reset
+[Thu Dec 01 23:38:32 CST 2022] A new Client Connected
+[Thu Dec 01 23:38:32 CST 2022] The number of clients is 1
+[Thu Dec 01 23:38:35 CST 2022] Client 0 User user: User Name: user
+[Thu Dec 01 23:38:35 CST 2022] Client 0 User user: Password: 123
+[Thu Dec 01 23:38:35 CST 2022] Client 0 User user: Checking User ID and Password...
+[Thu Dec 01 23:38:35 CST 2022] Client 0 User user: User user exists
+[Thu Dec 01 23:38:35 CST 2022] Client 0 User user: User user Password Correct
+[Thu Dec 01 23:39:09 CST 2022] Client 0 User user: The client was disconnected unexpectedly
+[Thu Dec 01 23:39:09 CST 2022] Client 0 User user: Error: Connection reset

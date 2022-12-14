@@ -1,3 +1,11 @@
+createtable: createtable name header1,header2,...
+deletetable: deletetable name
+insert: insert tableName key value1,value2,...
+update: update tableName key value1,value2,...
+delete: delete tableName (key/*)
+select: select tableName (key/*)
 ?: Get Help
 version: Get Version
 quit: Log out and return to the welcome screen
+date: Get Now Date
+history: Get history of instruction
