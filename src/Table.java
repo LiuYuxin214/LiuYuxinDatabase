@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public class Table {
-    BST table;
+    AVLTree table;
     int columns;
     int rows;
     String name;
@@ -13,14 +13,14 @@ public class Table {
 
     public Table(String name) {
         this.name = name;
-        table = new BST();
+        table = new AVLTree();
     }
 
     public Table(String name, String[] headers) {
         this.name = name;
         this.columns = headers.length;
         this.headers = new LinkedHashSet<>(List.of(headers));
-        table = new BST();
+        table = new AVLTree();
     }
 
     public int getColumns() {
@@ -66,8 +66,7 @@ public class Table {
 
     public AVLTreeNode select(int key) {
         AVLTreeNode n = new AVLTreeNode(key);
-        AVLTreeNode result = table.search(n);
-        return result;
+        return table.search(n);
     }
 
     public ArrayList<AVLTreeNode> selectAll() {
