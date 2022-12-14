@@ -1,0 +1,40 @@
+[Wed Dec 14 16:37:09 CST 2022] Liu Yuxin Database Server Version 1.0
+[Wed Dec 14 16:37:09 CST 2022] Server booting up...
+[Wed Dec 14 16:37:09 CST 2022] Server started at Wed Dec 14 16:37:09 CST 2022
+[Wed Dec 14 16:37:09 CST 2022] Database Name: MyDatabase
+[Wed Dec 14 16:37:09 CST 2022] Database Version: 1.0
+[Wed Dec 14 16:37:09 CST 2022] IP: 192.168.8.143
+[Wed Dec 14 16:37:09 CST 2022] Port: 20000
+[Wed Dec 14 16:37:09 CST 2022] Waiting for client...
+[Wed Dec 14 16:37:15 CST 2022] A new Client Connected
+[Wed Dec 14 16:37:15 CST 2022] The number of clients is 1
+[Wed Dec 14 16:37:19 CST 2022] Client 0 User user: User Name: user
+[Wed Dec 14 16:37:19 CST 2022] Client 0 User user: Password: 123
+[Wed Dec 14 16:37:19 CST 2022] Client 0 User user: Checking User ID and Password...
+[Wed Dec 14 16:37:19 CST 2022] Client 0 User user: User user exists
+[Wed Dec 14 16:37:19 CST 2022] Client 0 User user: User user Password Correct
+[Wed Dec 14 16:37:30 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:37:30 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:37:39 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:37:39 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:37:58 CST 2022] Client 0 User user: User user updated a row in table named student
+[Wed Dec 14 16:38:11 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:38:11 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:38:19 CST 2022] Client 0 User user: User user updated a row in table named student
+[Wed Dec 14 16:38:24 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:38:24 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:38:38 CST 2022] Client 0 User user: User user deleted a row from table named student
+[Wed Dec 14 16:38:48 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:38:48 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:39:01 CST 2022] Client 0 User user: User user deleted a table named student
+[Wed Dec 14 16:39:32 CST 2022] Client 0 User user: User user created a table named stuq
+[Wed Dec 14 16:39:44 CST 2022] Client 0 User user: User user selected all rows from table named stuq
+[Wed Dec 14 16:39:44 CST 2022] Client 0 User user: User user selected a row from table named stuq
+[Wed Dec 14 16:40:02 CST 2022] Client 0 User user: User user inserted a row into table named stuq
+[Wed Dec 14 16:40:18 CST 2022] Client 0 User user: User user selected a row from table named stuq
+[Wed Dec 14 16:40:18 CST 2022] Client 0 User user: User user selected a row from table named stuq
+[Wed Dec 14 16:40:32 CST 2022] Client 0 User user: User user deleted a table named stuq
+[Wed Dec 14 16:40:43 CST 2022] Client 0 User user: User user deleted a table named stu
+[Wed Dec 14 16:40:50 CST 2022] Client 0 User user: User user deleted a table named student
+[Wed Dec 14 16:40:54 CST 2022] Client 0 User user: Client logs out
+[Wed Dec 14 16:40:54 CST 2022] Client 0 User user: The client is disconnected normally

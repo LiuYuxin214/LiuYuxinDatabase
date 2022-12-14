@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
-public class TreeNode implements Comparable<TreeNode> {
+public class AVLTreeNode implements Comparable<AVLTreeNode> {
     protected int key;
     protected ArrayList<String> values = new ArrayList<>();
-    protected TreeNode left;
-    protected TreeNode right;
+    protected AVLTreeNode left;
+    protected AVLTreeNode right;
+    protected int height = 0;
 
-    public TreeNode(int key) {
+    public AVLTreeNode(int key) {
         this.key = key;
     }
 
@@ -26,7 +27,7 @@ public class TreeNode implements Comparable<TreeNode> {
         values.add(value);
     }
 
-    public int compareTo(TreeNode o) {
+    public int compareTo(AVLTreeNode o) {
         if (key > o.key) {
             return 1;
         } else if (key < o.key) {

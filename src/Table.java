@@ -36,7 +36,7 @@ public class Table {
     }
 
     public void insert(int key, String[] values) {
-        TreeNode n = new TreeNode(key);
+        AVLTreeNode n = new AVLTreeNode(key);
         for (int i = 0; i < columns - 1; i++) {
             n.add(values[i]);
         }
@@ -45,7 +45,7 @@ public class Table {
     }
 
     public void delete(int key) {
-        TreeNode n = new TreeNode(key);
+        AVLTreeNode n = new AVLTreeNode(key);
         table.delete(n);
         rows--;
     }
@@ -56,7 +56,7 @@ public class Table {
     }
 
     public void update(int key, String[] values) {
-        TreeNode n = new TreeNode(key);
+        AVLTreeNode n = new AVLTreeNode(key);
         for (int i = 0; i < columns - 1; i++) {
             n.add(values[i]);
         }
@@ -64,13 +64,13 @@ public class Table {
         table.insert(n);
     }
 
-    public TreeNode select(int key) {
-        TreeNode n = new TreeNode(key);
-        TreeNode result = table.search(n);
+    public AVLTreeNode select(int key) {
+        AVLTreeNode n = new AVLTreeNode(key);
+        AVLTreeNode result = table.search(n);
         return result;
     }
 
-    public ArrayList<TreeNode> selectAll() {
+    public ArrayList<AVLTreeNode> selectAll() {
         return table.inorder();
     }
 
@@ -78,8 +78,8 @@ public class Table {
         PrintWriter writer = new PrintWriter("Tables/" + name + ".txt");
         writer.println(columns);
         writer.println(headers);
-        ArrayList<TreeNode> nodes = selectAll();
-        for (TreeNode node : nodes) {
+        ArrayList<AVLTreeNode> nodes = selectAll();
+        for (AVLTreeNode node : nodes) {
             writer.println(node.getKey() + " " + node.getValues());
         }
         writer.println("EOF");

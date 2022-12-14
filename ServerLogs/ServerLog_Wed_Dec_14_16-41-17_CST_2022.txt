@@ -1,0 +1,41 @@
+[Wed Dec 14 16:41:17 CST 2022] Liu Yuxin Database Server Version 1.0
+[Wed Dec 14 16:41:17 CST 2022] Server booting up...
+[Wed Dec 14 16:41:17 CST 2022] Server started at Wed Dec 14 16:41:17 CST 2022
+[Wed Dec 14 16:41:17 CST 2022] Database Name: MyDatabase
+[Wed Dec 14 16:41:17 CST 2022] Database Version: 1.0
+[Wed Dec 14 16:41:17 CST 2022] IP: 192.168.8.143
+[Wed Dec 14 16:41:17 CST 2022] Port: 20000
+[Wed Dec 14 16:41:17 CST 2022] Waiting for client...
+[Wed Dec 14 16:41:21 CST 2022] A new Client Connected
+[Wed Dec 14 16:41:21 CST 2022] The number of clients is 1
+[Wed Dec 14 16:41:25 CST 2022] Client 0 User user: User Name: user
+[Wed Dec 14 16:41:25 CST 2022] Client 0 User user: Password: 123
+[Wed Dec 14 16:41:25 CST 2022] Client 0 User user: Checking User ID and Password...
+[Wed Dec 14 16:41:25 CST 2022] Client 0 User user: User user exists
+[Wed Dec 14 16:41:25 CST 2022] Client 0 User user: User user Password Correct
+[Wed Dec 14 16:41:58 CST 2022] Client 0 User user: User user created a table named student
+[Wed Dec 14 16:42:47 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Wed Dec 14 16:43:02 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Wed Dec 14 16:43:15 CST 2022] Client 0 User user: User user deleted a row from table named student
+[Wed Dec 14 16:43:22 CST 2022] Client 0 User user: User user deleted a row from table named student
+[Wed Dec 14 16:43:27 CST 2022] Client 0 User user: Client logs out
+[Wed Dec 14 16:43:27 CST 2022] Client 0 User user: The client is disconnected normally
+[Wed Dec 14 16:45:41 CST 2022] A new Client Connected
+[Wed Dec 14 16:45:41 CST 2022] The number of clients is 1
+[Wed Dec 14 16:45:48 CST 2022] Client 0 User user: User Name: user
+[Wed Dec 14 16:45:48 CST 2022] Client 0 User user: Password: 123
+[Wed Dec 14 16:45:48 CST 2022] Client 0 User user: Checking User ID and Password...
+[Wed Dec 14 16:45:48 CST 2022] Client 0 User user: User user exists
+[Wed Dec 14 16:45:48 CST 2022] Client 0 User user: User user Password Correct
+[Wed Dec 14 16:46:29 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Wed Dec 14 16:46:48 CST 2022] Client 0 User user: User user inserted a row into table named student
+[Wed Dec 14 16:47:58 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:47:58 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:48:53 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:48:53 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:49:55 CST 2022] Client 0 User user: User user updated a row in table named student
+[Wed Dec 14 16:50:16 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:50:16 CST 2022] Client 0 User user: User user selected a row from table named student
+[Wed Dec 14 16:50:29 CST 2022] Client 0 User user: User user deleted a row from table named student
+[Wed Dec 14 16:50:40 CST 2022] Client 0 User user: User user selected all rows from table named student
+[Wed Dec 14 16:50:40 CST 2022] Client 0 User user: User user selected a row from table named student

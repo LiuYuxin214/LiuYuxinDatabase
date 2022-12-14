@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class BST {
-    protected TreeNode root;
+    protected AVLTreeNode root;
     protected int size = 0;
 
     /**
@@ -11,8 +11,8 @@ public class BST {
     }
 
 
-    public TreeNode createNewNode(TreeNode node) {
-        TreeNode newNode = new TreeNode(node.getKey());
+    public AVLTreeNode createNewNode(AVLTreeNode node) {
+        AVLTreeNode newNode = new AVLTreeNode(node.getKey());
         newNode.setValues(node.getValues());
         return newNode;
     }
@@ -20,8 +20,8 @@ public class BST {
     /**
      * Returns true if the element is in the tree
      */
-    public TreeNode search(TreeNode e) {
-        TreeNode current = root; // Start from the root
+    public AVLTreeNode search(AVLTreeNode e) {
+        AVLTreeNode current = root; // Start from the root
 
         while (current != null) {
             if (e.compareTo(current) < 0) {
@@ -40,13 +40,13 @@ public class BST {
      * Insert element into the binary tree
      * Return true if the element is inserted successfully
      */
-    public boolean insert(TreeNode n) {
+    public boolean insert(AVLTreeNode n) {
         if (root == null)
             root = createNewNode(n); // Create a new root
         else {
             // Locate the parent node
-            TreeNode parent = null;
-            TreeNode current = root;
+            AVLTreeNode parent = null;
+            AVLTreeNode current = root;
             while (current != null)
                 if (n.compareTo(current) < 0) {
                     parent = current;
@@ -72,8 +72,8 @@ public class BST {
     /**
      * Inorder traversal from the root
      */
-    public ArrayList<TreeNode> inorder() {
-        ArrayList<TreeNode> list = new ArrayList<>();
+    public ArrayList<AVLTreeNode> inorder() {
+        ArrayList<AVLTreeNode> list = new ArrayList<>();
         inorder(root, list);
         return list;
     }
@@ -81,7 +81,7 @@ public class BST {
     /**
      * Inorder traversal from a subtree
      */
-    protected void inorder(TreeNode root, ArrayList<TreeNode> list) {
+    protected void inorder(AVLTreeNode root, ArrayList<AVLTreeNode> list) {
         if (root == null) return;
         inorder(root.left, list);
         list.add(root);
@@ -92,9 +92,9 @@ public class BST {
         return size;
     }
 
-    public java.util.ArrayList<TreeNode> path(TreeNode e) {
-        java.util.ArrayList<TreeNode> list = new java.util.ArrayList<>();
-        TreeNode current = root; // Start from the root
+    public java.util.ArrayList<AVLTreeNode> path(AVLTreeNode e) {
+        java.util.ArrayList<AVLTreeNode> list = new java.util.ArrayList<>();
+        AVLTreeNode current = root; // Start from the root
         while (current != null) {
             list.add(current); // Add the node to the list
             if (e.compareTo(current) < 0) {
@@ -113,10 +113,10 @@ public class BST {
      * Return true if the element is deleted successfully
      * Return false if the element is not in the tree
      */
-    public boolean delete(TreeNode n) {
+    public boolean delete(AVLTreeNode n) {
         // Locate the node to be deleted and also locate its parent node
-        TreeNode parent = null;
-        TreeNode current = root;
+        AVLTreeNode parent = null;
+        AVLTreeNode current = root;
         while (current != null) {
             if (n.compareTo(current) < 0) {
                 parent = current;
@@ -146,8 +146,8 @@ public class BST {
             // Case 2: The current node has a left child
             // Locate the rightmost node in the left subtree of
             // the current node and also its parent
-            TreeNode parentOfRightMost = current;
-            TreeNode rightMost = current.left;
+            AVLTreeNode parentOfRightMost = current;
+            AVLTreeNode rightMost = current.left;
 
             while (rightMost.right != null) {
                 parentOfRightMost = rightMost;

@@ -1,5 +1,4 @@
-2
-[ID, Name]
-123 [xcv]
-1194 [liu]
+3
+[ID, Name, Grade]
+123 [Mike, B]
 EOF

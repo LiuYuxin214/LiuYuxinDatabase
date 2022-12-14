@@ -134,8 +134,8 @@ public class ProcessOneClient implements Runnable {
                                 out.writeUTF(table.getHeaders());
                                 if (arguments.equals("*")) {
                                     out.writeInt(table.getRows());
-                                    ArrayList<TreeNode> rows = table.selectAll();
-                                    for (TreeNode row : rows) {
+                                    ArrayList<AVLTreeNode> rows = table.selectAll();
+                                    for (AVLTreeNode row : rows) {
                                         out.writeUTF(row.getKey() + " " + row.getValues().toString());
                                     }
                                     serverLog.addClientUser(clientID, userName, "User " + userName + " selected all rows from table named " + name);
