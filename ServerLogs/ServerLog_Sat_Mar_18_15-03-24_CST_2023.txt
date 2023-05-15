@@ -1,0 +1,24 @@
+[Sat Mar 18 15:03:24 CST 2023] Liu Yuxin Database Server Version 1.0
+[Sat Mar 18 15:03:24 CST 2023] Server booting up...
+[Sat Mar 18 15:03:24 CST 2023] Server started at Sat Mar 18 15:03:24 CST 2023
+[Sat Mar 18 15:03:24 CST 2023] Database Name: MyDatabase
+[Sat Mar 18 15:03:24 CST 2023] Database Version: 1.0
+[Sat Mar 18 15:03:24 CST 2023] IP: 10.33.129.73
+[Sat Mar 18 15:03:24 CST 2023] Port: 20000
+[Sat Mar 18 15:03:24 CST 2023] Waiting for client...
+[Sat Mar 18 15:03:44 CST 2023] A new Client Connected
+[Sat Mar 18 15:03:44 CST 2023] The number of clients is 1
+[Sat Mar 18 15:04:07 CST 2023] Client 0 User LiuYuxin: User Name: LiuYuxin
+[Sat Mar 18 15:04:07 CST 2023] Client 0 User LiuYuxin: Password: 2002917l
+[Sat Mar 18 15:04:07 CST 2023] Client 0 User LiuYuxin: Checking User ID and Password...
+[Sat Mar 18 15:04:07 CST 2023] Client 0 User LiuYuxin: User LiuYuxin exists
+[Sat Mar 18 15:04:07 CST 2023] Client 0 User LiuYuxin: User LiuYuxin Password Correct
+[Sat Mar 18 15:08:29 CST 2023] Client 0 User LiuYuxin: User LiuYuxin created a table named students
+[Sat Mar 18 15:09:01 CST 2023] Client 0 User LiuYuxin: User LiuYuxin inserted a row into table named students
+[Sat Mar 18 15:09:35 CST 2023] A new Client Connected
+[Sat Mar 18 15:09:35 CST 2023] The number of clients is 2
+[Sat Mar 18 15:09:43 CST 2023] Client 0 User LiuYuxin: User Name: LiuYuxin
+[Sat Mar 18 15:09:43 CST 2023] Client 0 User LiuYuxin: Password: 2002917l
+[Sat Mar 18 15:09:43 CST 2023] Client 0 User LiuYuxin: Checking User ID and Password...
+[Sat Mar 18 15:09:43 CST 2023] Client 0 User LiuYuxin: User LiuYuxin exists
+[Sat Mar 18 15:09:43 CST 2023] Client 0 User LiuYuxin: User LiuYuxin Password Correct

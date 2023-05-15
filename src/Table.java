@@ -37,7 +37,7 @@ public class Table {
 
     public void insert(int key, String[] values) {
         AVLTreeNode n = new AVLTreeNode(key);
-        for (int i = 0; i < columns - 1; i++) {
+        for (int i = 0; i < columns; i++) {
             n.add(values[i]);
         }
         table.insert(n);
@@ -57,7 +57,7 @@ public class Table {
 
     public void update(int key, String[] values) {
         AVLTreeNode n = new AVLTreeNode(key);
-        for (int i = 0; i < columns - 1; i++) {
+        for (int i = 0; i < columns; i++) {
             n.add(values[i]);
         }
         table.delete(n);
@@ -100,7 +100,7 @@ public class Table {
                 }
                 String[] entry = data.split(" ");
                 int key = Integer.parseInt(entry[0]);
-                String[] values = new String[columns - 1];
+                String[] values = new String[columns];
                 for (int i = 1; i < entry.length; i++) {
                     if (i == 1) {
                         values[i - 1] = entry[i].substring(1, entry[i].length() - 1);

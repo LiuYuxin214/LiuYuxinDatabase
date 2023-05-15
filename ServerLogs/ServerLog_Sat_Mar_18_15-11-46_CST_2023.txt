@@ -1,0 +1,20 @@
+[Sat Mar 18 15:11:46 CST 2023] Liu Yuxin Database Server Version 1.0
+[Sat Mar 18 15:11:46 CST 2023] Server booting up...
+[Sat Mar 18 15:11:46 CST 2023] Server started at Sat Mar 18 15:11:46 CST 2023
+[Sat Mar 18 15:11:46 CST 2023] Database Name: MyDatabase
+[Sat Mar 18 15:11:46 CST 2023] Database Version: 1.0
+[Sat Mar 18 15:11:46 CST 2023] IP: 10.33.129.73
+[Sat Mar 18 15:11:46 CST 2023] Port: 20000
+[Sat Mar 18 15:11:46 CST 2023] Waiting for client...
+[Sat Mar 18 15:11:51 CST 2023] A new Client Connected
+[Sat Mar 18 15:11:51 CST 2023] The number of clients is 1
+[Sat Mar 18 15:12:01 CST 2023] Client 0 User LiuYuxin: User Name: LiuYuxin
+[Sat Mar 18 15:12:01 CST 2023] Client 0 User LiuYuxin: Password: 2002917l
+[Sat Mar 18 15:12:01 CST 2023] Client 0 User LiuYuxin: Checking User ID and Password...
+[Sat Mar 18 15:12:01 CST 2023] Client 0 User LiuYuxin: User LiuYuxin exists
+[Sat Mar 18 15:12:01 CST 2023] Client 0 User LiuYuxin: User LiuYuxin Password Correct
+[Sat Mar 18 15:12:11 CST 2023] Client 0 User LiuYuxin: User LiuYuxin selected all rows from table named student
+[Sat Mar 18 15:12:11 CST 2023] Client 0 User LiuYuxin: User LiuYuxin selected a row from table named student
+[Sat Mar 18 15:12:42 CST 2023] Client 0 User LiuYuxin: User LiuYuxin created a table named stu
+[Sat Mar 18 15:13:13 CST 2023] Client 0 User LiuYuxin: The client was disconnected unexpectedly
+[Sat Mar 18 15:13:13 CST 2023] Client 0 User LiuYuxin: Error: null
